@@ -102,6 +102,10 @@
             border-radius: 4px
         }
 
+        .siete-gallery-title {
+            margin-top: 30px
+        }
+
         #lb {
             display: none;
             position: fixed;
@@ -339,6 +343,7 @@
                                                 montáže a cenu.</h4>
                                         </li>
                                     </ul>
+                                    <h3 class="siete-gallery-title">Ukážka našej práce</h3>
                                     <div class="row siete-gallery">
                                         <div class="col-xs-6 col-sm-4 col-md-3"><a href="/images/siete-holuby/35076.jpg"
                                                                                    target="_blank"><img
@@ -502,16 +507,17 @@
             else if (e.key === 'ArrowLeft') show(i - 1);
             else if (e.key === 'ArrowRight') show(i + 1);
         });
-  var x0 = null, y0 = null;
-  lb.addEventListener('touchstart', function (e) {
-    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
-  }, { passive: true });
-  lb.addEventListener('touchend', function (e) {
-    if (x0 === null) return;
-    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-    x0 = null;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? i + 1 : i - 1);
-  });
+        var x0 = null, y0 = null;
+        lb.addEventListener('touchstart', function (e) {
+            x0 = e.touches[0].clientX;
+            y0 = e.touches[0].clientY;
+        }, {passive: true});
+        lb.addEventListener('touchend', function (e) {
+            if (x0 === null) return;
+            var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+            x0 = null;
+            if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(dx < 0 ? i + 1 : i - 1);
+        });
     })();
 </script>
 </body>
